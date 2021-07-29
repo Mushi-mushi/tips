@@ -1,3 +1,23 @@
+sysctl -w vm.max_map_count=262144
+
+stop all containers:
+docker kill $(docker ps -q)
+
+remove all containers
+docker rm $(docker ps -a -q)
+
+remove all docker images
+docker rmi $(docker images -q)
+
+docker exec -u 0 -it 56cb94314e07 bashpwd
+
+
+logstash --config.test_and_exit -f 
+
+
+logstash --config.test_and_exit -f logstash.conf
+
+
 Git init:
 
 echo "# tips" >> README.md
